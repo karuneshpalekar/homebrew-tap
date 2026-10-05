@@ -12,12 +12,14 @@ cask "devsweep" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "DevSweep.app"
 
   # Builds are ad-hoc signed, not notarized, so macOS would otherwise block the
   # first launch. Clearing the quarantine flag is what the manual steps do.
+  # Legacy postflight on purpose: it works on every Homebrew version. Newer
+  # releases only warn about it for third-party taps.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/DevSweep.app"]
