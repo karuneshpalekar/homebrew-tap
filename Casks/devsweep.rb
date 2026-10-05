@@ -1,6 +1,6 @@
 cask "devsweep" do
-  version "0.8.2"
-  sha256 "e03505ef7d47bee18d61ef3497cb04ebc50bd7acf2916412b0c2362bc96040ec"
+  version "0.9.0"
+  sha256 "52aa65cba6aaea7afff914921fda2a0f95ac85a25d8321bcfc16392c6937151b"
 
   url "https://github.com/karuneshpalekar/DevSweep/releases/download/v#{version}/DevSweep-#{version}.dmg"
   name "DevSweep"
